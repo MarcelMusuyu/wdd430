@@ -3,18 +3,11 @@ import { useState } from 'react';
 const domNode = document.getElementById('app');
 const root = ReactDOM.createRoot(domNode);
 
-
-function HomePage() {
+import LikeButton from './like-button';
+export default function HomePage() {
   const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
   const [likes, setLikes] = useState(0);
-  function handleClick() {
-    if(window.confirm('Do you want to increment the like count?')) {
-        setLikes(likes + 1);
-        
-    }else {
-        alert('cancelled')
-    } ;
-  }
+ 
   return (
     <div>
       <Header title="Develop. Preview. Ship." />
@@ -23,7 +16,7 @@ function HomePage() {
           <li key={name}>{name}</li>
         ))}
       </ul>
-       <button onClick={handleClick}>Like {likes}</button>
+      <LikeButton />
     </div>
   );
 }
