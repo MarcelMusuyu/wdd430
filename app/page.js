@@ -1,12 +1,11 @@
-
-import { useState } from 'react';
-const domNode = document.getElementById('app');
-const root = ReactDOM.createRoot(domNode);
-
 import LikeButton from './like-button';
+ 
+function Header({ title }) {
+  return <h1>{title ? title : 'Default title'}</h1>;
+}
+ 
 export default function HomePage() {
   const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
-  const [likes, setLikes] = useState(0);
  
   return (
     <div>
@@ -20,7 +19,3 @@ export default function HomePage() {
     </div>
   );
 }
-function Header ({title}){
-    return <h1>{title ? title : "Default Title"}</h1>;
-}
-root.render(<HomePage />);  
